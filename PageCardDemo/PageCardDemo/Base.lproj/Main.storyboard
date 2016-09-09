@@ -45,6 +45,62 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="Er3-Kr-XQD"/>
                                 </connections>
                             </collectionView>
+                            <button opaque="NO" tag="5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ACg-sx-viR">
+                                <rect key="frame" x="110" y="479" width="77" height="30"/>
+                                <state key="normal" title="5"/>
+                                <connections>
+                                    <action selector="scrollToFirstPage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zbJ-x6-Xne"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BBR-8P-uOG">
+                                <rect key="frame" x="110" y="441" width="77" height="30"/>
+                                <state key="normal" title="1"/>
+                                <connections>
+                                    <action selector="scrollToFirstPage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eQj-hg-N2c"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jYC-Yl-n4p">
+                                <rect key="frame" x="25" y="441" width="77" height="30"/>
+                                <state key="normal" title="0"/>
+                                <connections>
+                                    <action selector="scrollToFirstPage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4Pc-Dz-8ZF"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V0U-ya-1js">
+                                <rect key="frame" x="25" y="479" width="77" height="30"/>
+                                <state key="normal" title="4"/>
+                                <connections>
+                                    <action selector="scrollToFirstPage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tLM-kV-Ktc"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kL4-tl-wpy">
+                                <rect key="frame" x="195" y="441" width="77" height="30"/>
+                                <state key="normal" title="2"/>
+                                <connections>
+                                    <action selector="scrollToFirstPage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zSj-tM-fev"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="6" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R92-bQ-ElX">
+                                <rect key="frame" x="195" y="479" width="77" height="30"/>
+                                <state key="normal" title="6"/>
+                                <connections>
+                                    <action selector="scrollToFirstPage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="29h-sk-YoF"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hdM-4V-KPE">
+                                <rect key="frame" x="284" y="441" width="77" height="30"/>
+                                <state key="normal" title="3"/>
+                                <connections>
+                                    <action selector="scrollToFirstPage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Udr-eB-2ni"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="7" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5x5-Df-WuA">
+                                <rect key="frame" x="284" y="479" width="77" height="30"/>
+                                <state key="normal" title="7"/>
+                                <connections>
+                                    <action selector="scrollToFirstPage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="B3Z-Iq-0DR"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>

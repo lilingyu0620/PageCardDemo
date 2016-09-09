@@ -8,6 +8,11 @@
 
 #import "PageCardCell.h"
 
+@interface PageCardCell()
+
+
+@end
+
 @implementation PageCardCell
 
 - (void)awakeFromNib {

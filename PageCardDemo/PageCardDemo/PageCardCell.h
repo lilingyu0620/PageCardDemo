@@ -10,4 +10,8 @@
 
 @interface PageCardCell : UICollectionViewCell
 + (NSString *)cellIdentifier;
+
+@property (weak, nonatomic) IBOutlet UILabel *detailLabel;
+
+
 @end

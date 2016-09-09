@@ -13,7 +13,6 @@
 #import "PageCardFlowLayout.h"
 
 @interface PageCardFlowLayout()
-@property (nonatomic, assign) CGFloat previousOffsetX;
 @property (nonatomic,assign) int pageNum;
 @end
 
@@ -59,7 +58,7 @@
         attribute.zIndex = 1;
         
         //渐变
-        CGFloat scaleForAlpha = 1 - fabsf(scaleForDistance)*0.4;
+        CGFloat scaleForAlpha = 1 - fabsf(scaleForDistance)*0.6;
         attribute.alpha = scaleForAlpha;
     }];
     

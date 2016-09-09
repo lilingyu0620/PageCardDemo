@@ -16,5 +16,6 @@
 
 
 @interface PageCardFlowLayout : UICollectionViewFlowLayout
+@property (nonatomic, assign) CGFloat previousOffsetX;
 @property (nonatomic,weak) id<PageCardFlowLayoutDelegate> delegate;
 @end
