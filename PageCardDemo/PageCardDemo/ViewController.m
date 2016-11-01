@@ -10,6 +10,10 @@
 #import "PageCardCell.h"
 #import "PageCardFlowLayout.h"
 
+#define MaxSections 100
+
+
+
 @interface ViewController ()<UICollectionViewDelegate,UICollectionViewDataSource,PageCardFlowLayoutDelegate>
 @property (weak, nonatomic) IBOutlet UICollectionView *mCollectionView;
 @property (nonatomic,strong) NSMutableArray *dataSourceArray;
@@ -39,6 +43,7 @@
 - (void)initUI{
 
     [self.mCollectionView registerNib:[UINib nibWithNibName:[PageCardCell cellIdentifier] bundle:nil] forCellWithReuseIdentifier:[PageCardCell cellIdentifier]];
+    self.mCollectionView.decelerationRate = 0;
     self.layout = [[PageCardFlowLayout alloc]init];
     self.layout.delegate = self;
     self.mCollectionView.collectionViewLayout = _layout;
@@ -50,12 +55,13 @@
 - (void)viewDidAppear:(BOOL)animated{
 
     [super viewDidAppear:animated];
-    [self scrollToItemAtIndexPath:1 withAnimated:NO];
+//    [self scrollToItemAtIndexPath:2 withAnimated:NO];
+    [self scrollToItemAtIndexPath:0 andSection:(MaxSections/2 - 1) withAnimated:NO];
 }
 
 - (void)initData{
 
-    self.dataSourceArray = [NSMutableArray arrayWithArray:@[@7,@0,@1,@2,@3,@4,@5,@6,@7,@0]];
+    self.dataSourceArray = [NSMutableArray arrayWithArray:@[@0,@1,@2,@3,@4,@5,@6,@7]];
 }
 
 - (NSMutableArray *)dataSourceArray{
@@ -69,6 +75,12 @@
 
 
 #pragma mark - UICollectionView DataSource
+
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
+
+    return MaxSections;
+}
+
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
     return self.dataSourceArray.count;
 }
@@ -79,24 +91,58 @@
     return cell;
 }
 
+//定义每个Section的四边间距
+-(UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
+{
+    CGFloat width = ((collectionView.frame.size.width - 280)-(10*2))/2;
+
+    if (section == 0) {
+        return UIEdgeInsetsMake(0, width + 10, 0, 0);//分别为上、左、下、右
+    }
+    else if(section == (MaxSections - 1)){
+        return UIEdgeInsetsMake(0, 0, 0, width + 10);//分别为上、左、下、右
+    }
+    else{
+        return UIEdgeInsetsMake(0, 10, 0, 0);//分别为上、左、下、右
+    }
+}
+
 #pragma mark - PageCardFlowLayoutDelegate
 - (void)scrollToPageIndex:(NSInteger)index{
 
     self.indexPath = index;
     
-    NSLog(@"当前选择的是第%ld页",(long)index);
+    NSLog(@"当前选择的是第%ld页",((long)index % 8));
+//
+//    if (self.indexPath == 1) {
+//        [self scrollToItemAtIndexPath:9 withAnimated:NO];
+//        self.indexPath = 9;
+//    }
+//    else if (self.indexPath == 10){
+//        [self scrollToItemAtIndexPath:2 withAnimated:NO];
+//        self.indexPath = 2;
+//    }
+
 }
 
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
 
+}
+
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
+
+   }
+
+- (void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset{
+
+    
+}
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
 
-    if (_indexPath == 0) {
-        [self scrollToItemAtIndexPath:8 withAnimated:NO];
-    }
-    else if (_indexPath == 9){
-        [self scrollToItemAtIndexPath:1 withAnimated:NO];
-    }
+   
+
 }      // called when scroll view grinds to a halt
+
 
 - (IBAction)scrollToFirstPage:(id)sender {
     
@@ -107,14 +153,14 @@
                                   animated:YES];
 }
 
-- (void)scrollToItemAtIndexPath:(NSInteger)indexPath withAnimated:(BOOL)animated{
+- (void)scrollToItemAtIndexPath:(NSInteger)indexPath andSection:(NSInteger)section withAnimated:(BOOL)animated{
 
-    UICollectionViewLayoutAttributes *attr = [self.mCollectionView layoutAttributesForItemAtIndexPath:[NSIndexPath indexPathForRow:indexPath inSection:0]];
+    UICollectionViewLayoutAttributes *attr = [self.mCollectionView layoutAttributesForItemAtIndexPath:[NSIndexPath indexPathForRow:indexPath inSection:section]];
     [self.mCollectionView scrollToItemAtIndexPath:attr.indexPath
                                      atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally
                                              animated:animated];
     
-    self.layout.previousOffsetX = indexPath*290;
+    self.layout.previousOffsetX = (indexPath + section * self.dataSourceArray.count) * 290;
 }
 
 @end

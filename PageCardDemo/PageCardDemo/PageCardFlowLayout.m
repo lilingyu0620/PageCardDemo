@@ -28,8 +28,8 @@
     self.minimumLineSpacing = kLineSpace;
     //计算cell超出显示的宽度
     CGFloat width = ((self.collectionView.frame.size.width - kPageCardWidth)-(kLineSpace*2))/2;
-    //第一个cell和最后一个cell相对于屏幕的偏移
-    self.sectionInset = UIEdgeInsetsMake(0, kLineSpace+width, 0, kLineSpace+width);
+    //每个section的间距
+    self.sectionInset = UIEdgeInsetsMake(0, kLineSpace, 0, 0);
     //每个cell实际的大小
     self.itemSize = CGSizeMake(kPageCardWidth,kPageCardHeight);
     
