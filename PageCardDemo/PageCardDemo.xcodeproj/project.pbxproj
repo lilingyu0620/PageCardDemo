@@ -220,7 +220,7 @@
 				TargetAttributes = {
 					0A45AC1D1D77CB9F00A1AC7D = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = MLVXJYMGNE;
+						DevelopmentTeam = PW2BL84NY9;
 					};
 					0A45AC361D77CB9F00A1AC7D = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -430,11 +430,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = MLVXJYMGNE;
+				DEVELOPMENT_TEAM = PW2BL84NY9;
 				INFOPLIST_FILE = PageCardDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.sohu.demo.PageCardDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lly.PageCardDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -443,11 +443,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = MLVXJYMGNE;
+				DEVELOPMENT_TEAM = PW2BL84NY9;
 				INFOPLIST_FILE = PageCardDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.sohu.demo.PageCardDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lly.PageCardDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
