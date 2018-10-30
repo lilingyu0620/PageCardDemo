@@ -56,6 +56,7 @@
 
     [super viewDidAppear:animated];
 //    [self scrollToItemAtIndexPath:2 withAnimated:NO];
+    self.indexPath = 0;
     [self scrollToItemAtIndexPath:0 andSection:(MaxSections/2 - 1) withAnimated:NO];
 }
 
@@ -109,19 +110,19 @@
 
 #pragma mark - PageCardFlowLayoutDelegate
 - (void)scrollToPageIndex:(NSInteger)index{
-
-    self.indexPath = index;
     
-    NSLog(@"当前选择的是第%ld页",((long)index % 8));
-//
-//    if (self.indexPath == 1) {
-//        [self scrollToItemAtIndexPath:9 withAnimated:NO];
-//        self.indexPath = 9;
-//    }
-//    else if (self.indexPath == 10){
-//        [self scrollToItemAtIndexPath:2 withAnimated:NO];
-//        self.indexPath = 2;
-//    }
+    NSInteger curIdx = index % 8;
+    
+    if(curIdx == 0 && self.indexPath == 7){
+        NSLog(@"左滑 且section++");
+    }
+    else if (curIdx == 7 && self.indexPath == 0){
+        NSLog(@"右滑 且section--");
+    }
+    
+    self.indexPath = curIdx;
+    
+    NSLog(@"当前选择的是第%ld页",curIdx);
 
 }
 
